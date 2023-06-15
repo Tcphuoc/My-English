@@ -112,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        Log.i("readFile", "it's work");
     }
 
     public void writeFile(){
@@ -120,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
             FileOutputStream fos = new FileOutputStream(new File(getExternalFilesDir(null), fileName));
             for (WordEntity word: list){
                 String data = "word:"+word.getWord()+"/type:"+word.getType()+"/synonym:"+word.getSynonym()+
-                        "/define:"+word.getDefine()+"/ori:"+"/fav:"+ word.isFav() +"\n";
+                        "/define:"+word.getDefine()+"/fav:"+ word.isFav() +"\n";
                 fos.write(data.getBytes());
             }
             fos.close();
