@@ -98,10 +98,10 @@ public class MainActivity extends AppCompatActivity {
                     edit[i] = data[i].substring(data[i].indexOf(":")+1);
                 }
 
-                if (edit[6].equals("true")){
-                    list.add(new WordEntity(edit[0], edit[1], edit[2], edit[3], edit[4], edit[5], true));
-                } else if (edit[6].equals("false")){
-                    list.add(new WordEntity(edit[0], edit[1], edit[2], edit[3], edit[4], edit[5], false));
+                if (edit[4].equals("true")){
+                    list.add(new WordEntity(edit[0], edit[1], edit[2], edit[3], true));
+                } else if (edit[4].equals("false")){
+                    list.add(new WordEntity(edit[0], edit[1], edit[2], edit[3], false));
                 }
 
                 string = br.readLine();
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             FileOutputStream fos = new FileOutputStream(new File(getExternalFilesDir(null), fileName));
             for (WordEntity word: list){
                 String data = "word:"+word.getWord()+"/type:"+word.getType()+"/synonym:"+word.getSynonym()+
-                        "/define:"+word.getDefine()+"/ori:"+word.getOriSen()+"/my:"+word.getMySen()+"/fav:"+ word.isFav() +"\n";
+                        "/define:"+word.getDefine()+"/ori:"+"/fav:"+ word.isFav() +"\n";
                 fos.write(data.getBytes());
             }
             fos.close();

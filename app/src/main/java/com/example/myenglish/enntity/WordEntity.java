@@ -5,17 +5,13 @@ public class WordEntity {
     private String type;
     private String define;
     private String synonym;
-    private String oriSen;
-    private String mySen;
     private boolean fav;
 
-    public WordEntity(String word, String type, String define, String synonym, String oriSen, String mySen, boolean fav) {
+    public WordEntity(String word, String type, String define, String synonym, boolean fav) {
         this.word = word;
         this.type = type;
         this.define = define;
         this.synonym = synonym;
-        this.oriSen = oriSen;
-        this.mySen = mySen;
         this.fav = fav;
     }
 
@@ -33,14 +29,6 @@ public class WordEntity {
 
     public String getSynonym() {
         return synonym;
-    }
-
-    public String getOriSen() {
-        return oriSen;
-    }
-
-    public String getMySen() {
-        return mySen;
     }
 
     public boolean isFav() {
@@ -61,14 +49,6 @@ public class WordEntity {
 
     public void setSynonym(String synonym) {
         this.synonym = synonym;
-    }
-
-    public void setOriSen(String oriSen) {
-        this.oriSen = oriSen;
-    }
-
-    public void setMySen(String mySen) {
-        this.mySen = mySen;
     }
 
     public void setFav(boolean fav) {

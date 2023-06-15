@@ -45,8 +45,6 @@ public class DetailAdapter extends PagerAdapter {
         TextView type = view.findViewById(R.id.tv_detail_type);
         TextView define = view.findViewById(R.id.tv_detail_define);
         TextView synonym = view.findViewById(R.id.tv_detail_synonym);
-        TextView origional = view.findViewById(R.id.tv_detail_origional);
-        TextView my = view.findViewById(R.id.tv_detail_my);
         ImageView fav = view.findViewById(R.id.iv_fav);
         ImageView unfav = view.findViewById(R.id.iv_unfav);
 
@@ -54,8 +52,6 @@ public class DetailAdapter extends PagerAdapter {
         type.setText(list.get(position).getType());
         define.setText(list.get(position).getDefine());
         synonym.setText(list.get(position).getSynonym());
-        origional.setText(list.get(position).getOriSen());
-        my.setText(list.get(position).getMySen());
 
         if(!list.get(position).isFav()){
             fav.setVisibility(View.VISIBLE);

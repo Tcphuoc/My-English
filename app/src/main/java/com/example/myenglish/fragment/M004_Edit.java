@@ -27,7 +27,7 @@ import java.util.List;
 public class M004_Edit extends Fragment implements View.OnClickListener {
     private final WordEntity wordEntity;
     private Context mContext;
-    private EditText word, synonym, define, origional, my;
+    private EditText word, synonym, define;
     private String type;
     private String[] types;
     private final List<WordEntity> list;
@@ -56,14 +56,10 @@ public class M004_Edit extends Fragment implements View.OnClickListener {
         Spinner spinner = view.findViewById(R.id.spinner);
         define = view.findViewById(R.id.edt_define);
         synonym = view.findViewById(R.id.edt_synonym);
-        origional = view.findViewById(R.id.edt_ori);
-        my = view.findViewById(R.id.edt_my);
 
         word.setText(wordEntity.getWord());
         define.setText(wordEntity.getDefine());
         synonym.setText(wordEntity.getSynonym());
-        origional.setText(wordEntity.getOriSen());
-        my.setText(wordEntity.getMySen());
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_item, types);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -99,13 +95,11 @@ public class M004_Edit extends Fragment implements View.OnClickListener {
             String word = this.word.getText().toString();
             String define = this.define.getText().toString();
             String synonym = this.synonym.getText().toString();
-            String origional = this.origional.getText().toString();
-            String my = this.my.getText().toString();
-            if((word.equals("") || this.type == null || define.equals("") || synonym.equals("") || origional.equals("") || my.equals(""))){
+            if((word.equals("") || this.type == null || define.equals("") || synonym.equals(""))){
                 Toast.makeText(mContext, "Please no empty value", Toast.LENGTH_SHORT).show();
                 return;
             }
-            WordEntity edited = new WordEntity(word, type, define, synonym, origional, my, false);
+            WordEntity edited = new WordEntity(word, type, define, synonym, false);
             list.set(list.indexOf(wordEntity), edited);
             ((MainActivity)mContext).gotoM002(edited, list);
         }

@@ -89,46 +89,6 @@
             android:minHeight="48dp"
             tools:ignore="VisualLintTextFieldSize" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="@string/ori_sen"
-            android:textColor="@color/blue"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/edt_ori"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/text"
-            android:importantForAutofill="no"
-            android:inputType="textShortMessage"
-            android:minHeight="48dp"
-            tools:ignore="VisualLintTextFieldSize" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="@string/my_sen"
-            android:textColor="@color/blue"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <EditText
-            android:id="@+id/edt_my"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/text"
-            android:importantForAutofill="no"
-            android:inputType="textShortMessage"
-            android:minHeight="48dp"
-            tools:ignore="VisualLintTextFieldSize" />
-
     </LinearLayout>
 
     <LinearLayout

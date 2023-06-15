@@ -24,7 +24,7 @@ import com.example.myenglish.enntity.WordEntity;
 
 public class M003_Add extends Fragment implements View.OnClickListener{
     private Context mContext;
-    private EditText word, synonym, define, origional, my;
+    private EditText word, synonym, define;
     private String type;
     private String[] types;
 
@@ -48,8 +48,6 @@ public class M003_Add extends Fragment implements View.OnClickListener{
         Spinner spinner = view.findViewById(R.id.spinner);
         define = view.findViewById(R.id.edt_define);
         synonym = view.findViewById(R.id.edt_synonym);
-        origional = view.findViewById(R.id.edt_ori);
-        my = view.findViewById(R.id.edt_my);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_item, types);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -84,13 +82,11 @@ public class M003_Add extends Fragment implements View.OnClickListener{
             String word = this.word.getText().toString();
             String define = this.define.getText().toString();
             String synonym = this.synonym.getText().toString();
-            String origional = this.origional.getText().toString();
-            String my = this.my.getText().toString();
-            if((word.equals("") || this.type == null || define.equals("") || synonym.equals("") || origional.equals("") || my.equals(""))){
+            if((word.equals("") || this.type == null || define.equals("") || synonym.equals(""))){
                 Toast.makeText(mContext, "Please no empty value", Toast.LENGTH_SHORT).show();
                 return;
             }
-            WordEntity wordEntity = new WordEntity(word, type, define, synonym, origional, my, false);
+            WordEntity wordEntity = new WordEntity(word, type, define, synonym, false);
             ((MainActivity)mContext).addWord(wordEntity);
         }
         ((MainActivity)mContext).gotoM001();

@@ -54,7 +54,7 @@
             android:id="@+id/tv_detail_type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="15dp"
             android:text="@string/text"
             android:textColor="@color/black"
             android:textSize="24sp" />
@@ -72,7 +72,7 @@
             android:id="@+id/tv_detail_define"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="15dp"
             android:text="@string/text"
             android:textColor="@color/black"
             android:textSize="24sp" />
@@ -90,44 +90,10 @@
             android:id="@+id/tv_detail_synonym"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="15dp"
             android:text="@string/text"
             android:textColor="@color/black"
             android:textSize="24sp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="@string/ori_sen"
-            android:textColor="@color/blue"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_detail_origional"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="@string/text"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:text="@string/my_sen"
-            android:textColor="@color/blue"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_detail_my"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:text="@string/text"
-            android:textColor="@color/black"
-            android:textSize="24sp" /></LinearLayout>
+    </LinearLayout>
 </ScrollView>
