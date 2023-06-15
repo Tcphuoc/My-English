@@ -8,8 +8,10 @@ import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.example.myenglish.R;
 import com.example.myenglish.enntity.WordEntity;
@@ -17,6 +19,8 @@ import com.example.myenglish.fragment.M001_Entry;
 import com.example.myenglish.fragment.M002_Detail;
 import com.example.myenglish.fragment.M003_Add;
 import com.example.myenglish.fragment.M004_Edit;
+import com.example.myenglish.fragment.M005_Practice;
+import com.google.android.material.tabs.TabLayout;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -35,8 +39,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initView();
+    }
 
-        setContentView(R.layout.activity_main);
+    public void initView(){
         checkPermission();
 
         //Tạo hoặc mở file lưu trữ
@@ -48,6 +54,36 @@ public class MainActivity extends AppCompatActivity {
         }
 
         gotoM001();
+
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        tabLayout.getTabAt(0).setText("Home").setIcon(R.drawable.ic_home);
+        tabLayout.getTabAt(0).getIcon().setColorFilter(Color.parseColor("#3a86ff"), PorterDuff.Mode.SRC_IN);
+        tabLayout.getTabAt(1).setText("Practice").setIcon(R.drawable.ic_book);
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                tab.getIcon().setColorFilter(Color.parseColor("#3a86ff"), PorterDuff.Mode.SRC_IN);
+                switch (tab.getPosition()){
+                    case 0:
+                        gotoM001();
+                        break;
+                    case 1:
+                        gotoM005();
+                        break;
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                tabLayout.getTabAt(0).getIcon().clearColorFilter();
+                tab.getIcon().clearColorFilter();
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
     @Override
@@ -149,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void gotoM001(){
-        showFrg(new M001_Entry(list));
+        getSupportFragmentManager().beginTransaction().replace(R.id.ln_sub, new M001_Entry(list), null).commit();
     }
 
     public void gotoM002(WordEntity word, List<WordEntity> list){
@@ -161,5 +197,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void gotoM004(WordEntity word){
         showFrg(new M004_Edit(word, this.list));
+    }
+
+    public void gotoM005(){
+        getSupportFragmentManager().beginTransaction().replace(R.id.ln_sub, new M005_Practice(), null).commit();
     }
 }
