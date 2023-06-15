@@ -1,10 +1,10 @@
 package com.example.myenglish.enntity;
 
 public class WordEntity {
-    private String word;
-    private String type;
-    private String define;
-    private String synonym;
+    private final String word;
+    private final String type;
+    private final String define;
+    private final String synonym;
     private boolean fav;
 
     public WordEntity(String word, String type, String define, String synonym, boolean fav) {
@@ -33,22 +33,6 @@ public class WordEntity {
 
     public boolean isFav() {
         return fav;
-    }
-
-    public void setWord(String word) {
-        this.word = word;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public void setDefine(String define) {
-        this.define = define;
-    }
-
-    public void setSynonym(String synonym) {
-        this.synonym = synonym;
     }
 
     public void setFav(boolean fav) {

@@ -3,7 +3,6 @@ package com.example.myenglish.fragment;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -51,7 +50,7 @@ public class M002_Detail extends Fragment {
     public void initView(View v){
         ImageView back = v.findViewById(R.id.iv_back);
         back.setVisibility(View.VISIBLE);
-        back.setOnClickListener(v1 -> ((MainActivity)mContext).gotoM001());
+        back.setOnClickListener(v1 -> ((MainActivity)mContext).gotoM000());
         TextView title = v.findViewById(R.id.tv_title);
         title.setText(R.string.app_name);
 
@@ -63,16 +62,8 @@ public class M002_Detail extends Fragment {
         delete.setOnClickListener(v1 -> {
             AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
             builder.setMessage("Are you sure to delete this word?");
-            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    ((MainActivity)mContext).removeWord(wordEntity);
-                }
-            });
-            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {}
-            });
+            builder.setPositiveButton("Yes", (dialog, which) -> ((MainActivity)mContext).removeWord(wordEntity));
+            builder.setNegativeButton("No", (dialog, which) -> {});
             Dialog dialog = builder.create();
             dialog.show();
         });
