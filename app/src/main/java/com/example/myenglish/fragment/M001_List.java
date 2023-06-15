@@ -24,12 +24,12 @@ import com.example.myenglish.enntity.WordEntity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class M001_Entry extends Fragment {
+public class M001_List extends Fragment {
     private Context mContext;
     private final List<WordEntity> list;
     private WordAdapter adapter;
 
-    public M001_Entry(List<WordEntity> list){
+    public M001_List(List<WordEntity> list){
         this.list = list;
     }
 
@@ -42,7 +42,7 @@ public class M001_Entry extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_m001_entry, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_m001_list, container, false);
         initView(rootView);
         return rootView;
     }

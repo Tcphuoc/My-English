@@ -89,6 +89,6 @@ public class M003_Add extends Fragment implements View.OnClickListener{
             WordEntity wordEntity = new WordEntity(word, type, define, synonym, false);
             ((MainActivity)mContext).addWord(wordEntity);
         }
-        ((MainActivity)mContext).gotoM001();
+        ((MainActivity)mContext).gotoM000();
     }
 }
