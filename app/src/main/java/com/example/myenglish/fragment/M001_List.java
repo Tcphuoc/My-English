@@ -48,9 +48,9 @@ public class M001_List extends Fragment {
     }
 
     public void initView(View view){
-        ImageView add = view.findViewById(R.id.iv_add);
+        ImageView add = view.findViewById(R.id.iv_list_add);
         add.setOnClickListener(v1 -> ((MainActivity)mContext).gotoM003());
-        android.widget.SearchView searchView = view.findViewById(R.id.sv_search);
+        android.widget.SearchView searchView = view.findViewById(R.id.sv_list_search);
         searchView.clearFocus();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

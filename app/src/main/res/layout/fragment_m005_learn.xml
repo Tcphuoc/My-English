@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.M000_Entry">
+    tools:context=".fragment.M005_Learn">
 
-    <LinearLayout
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_learn_words"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:id="@+id/ln_entry"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:padding="15dp">
 
-    </LinearLayout>
+    </androidx.recyclerview.widget.RecyclerView>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tl_entry"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/bt_learn_submit"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:tabIndicatorGravity="top"></com.google.android.material.tabs.TabLayout>
-
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:text="Submit" />
 </LinearLayout>

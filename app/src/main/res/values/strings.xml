@@ -3,13 +3,13 @@
 
     <string name="text">Text</string>
     <string name="image">Image</string>
+    <string name="number">Number</string>
 
     <string name="word">Word:</string>
     <string name="type">Type:</string>
     <string name="define">Definition:</string>
     <string name="synonym">Synonym:</string>
-    <string name="ori_sen">Original Sentence:</string>
-    <string name="my_sen">My Sentence:</string>
+    <string name="fav">Just favorite word</string>
 
     <string name="add">Add word</string>
 

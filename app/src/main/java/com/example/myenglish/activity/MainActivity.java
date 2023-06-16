@@ -13,11 +13,10 @@ import android.os.Bundle;
 import com.example.myenglish.R;
 import com.example.myenglish.enntity.WordEntity;
 import com.example.myenglish.fragment.M000_Entry;
-import com.example.myenglish.fragment.M001_List;
 import com.example.myenglish.fragment.M002_Detail;
 import com.example.myenglish.fragment.M003_Add;
 import com.example.myenglish.fragment.M004_Edit;
-import com.example.myenglish.fragment.M005_Practice;
+import com.example.myenglish.fragment.M005_Learn;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -140,11 +139,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void addWord(WordEntity word){
         this.list.add(word);
+        writeFile();
     }
 
     public void removeWord(WordEntity word){
         list.remove(word);
-        gotoM001();
+        gotoM000();
     }
 
     public void showFrg(Fragment fragment){
@@ -153,10 +153,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void gotoM000(){
         showFrg(new M000_Entry(this.list));
-    }
-
-    public void gotoM001(){
-        getSupportFragmentManager().beginTransaction().replace(R.id.ln_sub, new M001_List(list), null).commit();
     }
 
     public void gotoM002(WordEntity word, List<WordEntity> list){
@@ -168,5 +164,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void gotoM004(WordEntity word){
         showFrg(new M004_Edit(word, this.list));
+    }
+
+    public void gotoM005(){
+        showFrg(new M005_Learn(this.list));
     }
 }

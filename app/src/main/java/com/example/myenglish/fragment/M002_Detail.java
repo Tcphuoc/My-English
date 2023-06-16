@@ -54,7 +54,7 @@ public class M002_Detail extends Fragment {
         TextView title = v.findViewById(R.id.tv_title);
         title.setText(R.string.app_name);
 
-        ImageView edit = v.findViewById(R.id.iv_edit);
+        ImageView edit = v.findViewById(R.id.iv_detail_edit);
         edit.setVisibility(View.VISIBLE);
         edit.setOnClickListener(v1 -> ((MainActivity)mContext).gotoM004(wordEntity));
 

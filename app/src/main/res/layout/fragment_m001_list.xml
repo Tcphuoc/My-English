@@ -22,7 +22,7 @@
 
 
             <ImageView
-                android:id="@+id/iv_add"
+                android:id="@+id/iv_list_add"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:contentDescription="@string/image"
@@ -39,7 +39,7 @@
             app:cardElevation="10dp">
 
             <SearchView
-                android:id="@+id/sv_search"
+                android:id="@+id/sv_list_search"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:focusable="auto"
